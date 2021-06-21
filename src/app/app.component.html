@@ -1,0 +1,61 @@
+<div class="flight-order-schedule">
+	<div class="header-company-name d-flex justify-content-between">
+		<div class="d-flex">
+			<h4 class="company-name">Transport.ly</h4>
+			<p class="modify-compnay-logo">An automated air freight scheduling service.</p>
+		</div>
+		<div class="order-schedule-btn-div">
+			<button class="btn btn-primary" (click)="viewOrderASchedule()"> {{ toggleBtnTxt }} </button>
+		</div>
+	</div>
+	<div *ngIf="!toggleBtnBool">
+		<div *ngFor="let scheduling of fetchOrderFlightKeys; let i = index">
+			<div *ngFor="let day of ObjectKeys(scheduling)">
+				<p class="schedule-days">Scheduled flights for {{ day }} </p> 
+				<table class="table">
+					<thead>
+						<tr>
+							<th> Flight </th>
+							<th> Departure </th>
+							<th> Arrival </th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr *ngFor="let dayScheduleFlight of scheduling[day]">
+							<td>{{ dayScheduleFlight.flight_number }}</td>
+							<td>{{ dayScheduleFlight.departure_city }}</td>
+							<td>{{ dayScheduleFlight.arrival_city }}</td>
+						</tr>
+					</tbody>
+				</table> 
+			</div>
+		</div>
+	</div>
+
+	<div *ngIf="toggleBtnBool">
+		<p class="schedule-days">Orders</p>
+		<div>
+			<table  class="table">
+				<thead>
+					<tr>
+						<th > Order </th>
+						<th class="text-right"> Flight </th>
+						<th class="text-right"> Departure </th>
+						<th class="text-right"> Arrival </th>
+						<th class="text-right"> Day </th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let scheduling of flightScheduleOrderCombine; let i = index">
+						<td>{{ scheduling.orders }}</td>
+						<td class="text-right">{{ scheduling.flight_number }}</td>
+						<td class="text-right">{{ scheduling.departure_city }}</td>
+						<td class="text-right">{{ scheduling.arrival_city }}</td>
+						<td class="text-right">{{ scheduling.day }}</td>
+					</tr>
+				</tbody>
+			</table> 
+		</div>
+	</div>
+	
+</div>

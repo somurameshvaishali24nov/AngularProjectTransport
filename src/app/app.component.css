@@ -1,0 +1,65 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
+.flight-order-schedule {
+    font-family: system-ui;
+    padding: 20px;
+}
+
+.modify-compnay-logo {
+    margin-bottom: 0;
+    font-size: 12px;
+    padding-top: 11px !important;
+    padding-left: 15px !important;
+}
+
+.order-schedule-btn-div {
+    padding-top: 10px;
+}
+
+.btn-primary {
+    font-family: system-ui;
+    background: #11059b;
+    font-size: 12px;
+}
+
+.company-name {
+    font-weight: bold;
+}
+
+.schedule-days {
+    font-weight: bold;
+    font-size: 16px;
+    color: #000c;
+}
+
+thead,
+tbody,
+tfoot,
+tr,
+td,
+th {
+  border-color: inherit;
+  border-style: inset;
+  border-width: 0;
+}
+
+th {
+    color: #4e4949;
+    font-size: 14px;
+}
+
+td {
+    font-size: 13px;
+}
+
+table {
+    background: #fff;
+}
+
+.text-right {
+    text-align: end;
+}
+
+table {
+    box-shadow: 0px 0px 5px #ccc;
+}
